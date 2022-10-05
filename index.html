@@ -69,18 +69,18 @@
         </p>
       </div>
 
+      <!-- Guage begins -->
       <div class="row align-items-start">
         <div class="col bg-dark text-light m-3">
-          <!-- Guage begins -->
           <div id="gauge-demo" class="gauge-container"></div>
-          <!-- Guage ends. -->
         </div>
+        <!-- Guage ends. -->
+
+        <!-- Historic Values begins. -->
         <div class="col bg-dark text-light m-3">
-          <!-- Historic Values begins. -->
           <h2>Historical Values</h2>
           <br />
-          <br />
-          <br />
+
           today's range <br />
           <br />
           <br />
@@ -93,11 +93,11 @@
           30 day average range<br />
           <br />
           <br /><br />
-
-          <!-- Historic Values ends. -->
         </div>
+        <!-- Historic Values ends. -->
+
+        <!-- Next Update clock (clock timer conected to setinterval.JS) begins -->
         <div class="col bg-dark text-light m-3">
-          <!-- Next Update clock (clock timer conected to setinterval.JS) begins -->
           <br />
           <br />
           <br /><br />Hickory Dickory Countdown Clock <br />
@@ -109,17 +109,20 @@
           <br />
           <br />
           <br /><br />
-          <!-- Next Update ends. -->
         </div>
       </div>
+      <!-- Next Update ends. -->
 
+      <!-- Twitter Feed Embed begins. -->
       <div class="">
         <a
           class="twitter-timeline"
           data-lang="en"
+          data-width="700"
+          data-height="100em"
           data-theme="dark"
-          href="https://twitter.com/TwitterDev/lists/national-parks?ref_src=twsrc%5Etfw"
-          >A Twitter List by TwitterDev</a
+          href="https://twitter.com/politweet1789/lists/1499848319354478595?ref_src=twsrc%5Etfw"
+          >A Twitter List by politweet1789</a
         >
         <script
           async
@@ -127,9 +130,10 @@
           charset="utf-8"
         ></script>
       </div>
-      <!-- Mains Body ends. -->
     </div>
+    <!-- Twitter Feed Embed ends. -->
 
+    <!-- SCRIPTS FOOTER OF BODY. -->
     <script>
       var myGauge = Gauge(document.getElementById("gauge-demo"), {
         dialRadius: 40,
