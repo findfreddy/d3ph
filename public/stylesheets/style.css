@@ -1,10 +1,14 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 16px "Nunito";
 }
 
 a {
   color: #00b7ff;
+}
+
+.button {
+  margin: 3px;
 }
 
 .gauge-container > .gauge > .dial {
@@ -13,7 +17,7 @@ a {
 }
 .gauge-container > .gauge > .value {
   stroke: rgb(47, 227, 255);
-  stroke-width: 2;
+  stroke-width: 4;
 }
 .gauge-container > .gauge > .value-text {
   fill: rgb(47, 227, 255);
