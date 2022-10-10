@@ -57,6 +57,16 @@ app.get("/results", (req, res) => {
   console.log("HELLO THERE WOODPECKER");
 });
 
+// SENTIMENT GOOGLE
+// axios.post(
+//   "https://language.googleapis.com/v1/documents:analyzeEntities?key=AIzaSyAHSD9kpAhy9QlHM7MQqTTdR-2582zcBgk",
+//   {
+//     //this is the body of the request GOOGLE API DOC FORMAT
+//     firstName: "Fred",
+//     lastName: "Flintstone"
+//   }
+// );
+
 // // Catch 404 and forward to error handler
 // app.use((req, res, next) => {
 //   next(createError(404));

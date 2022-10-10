@@ -112,51 +112,35 @@
 		<div class="col bg-dark text-light m-3">
 			<h2 class="card-title text-start">Next Update</h2>
 
-			<p>
-				Click the button to prevent the timeout to execute. (You have 3
-				seconds).
-			</p>
+			<div id="progressBar">
+	  <div class="bar"></div>
+	</div>
 
-			<h2 id="demo"></h2>
 
-			<button onclick="myStopFunction()">Stop it</button>
-
-			<script>
-				const myTimeout = setTimeout(myGreeting, 3000);
-
-				function myGreeting() {
-					document.getElementById("demo").innerHTML = "Happy Birthday!";
-				}
-
-				function myStopFunction() {
-					clearTimeout(myTimeout);
-				}
-			</script>
 
 			<br />
-			<br />
-			<br /><br />The next update will happen in: <br />
-			<br />
-			8 seconds. <br /><br />
 			<br />
 			<br /><br />
+	<a href="http://stackoverflow.com/q/24530908/1238019" class="solink" target="_blank">The next update will happen in: </a>
 			<br />
-
+			<br />8 seconds.<br /><br />
+			<br /><br />
+			<br /><br />
 			<br /><br />
 		</div>
 	</div>
 	<!-- Next Update ends. -->
 
 	<!-- Twitter Feed Embed begins. -->
-	<div class="">
+	<div class="d-flex justify-content-center">
 		<a
 			class="twitter-timeline"
 			data-lang="en"
-			data-width="900"
+			data-width="600"
 			data-height="2200"
 			data-theme="dark"
 			href="https://twitter.com/politweet1789/lists/1499848319354478595?ref_src=twsrc%5Etfw"
-			>A Twitter List by politweet1789</a
+			></a
 		>
 		<script
 			async
@@ -166,24 +150,3 @@
 	</div>
 </div>
 <!-- Twitter Feed Embed ends. -->
-
-<!-- SCRIPTS FOOTER OF BODY. -->
-<script>
-	var myGauge = Gauge(document.getElementById("gauge-demo"), {
-		dialRadius: 40,
-		dialStartAngle: 135,
-		dialEndAngle: 45,
-		value: 45,
-		max: 100,
-		min: 0,
-		valueDialClass: "value",
-		valueClass: "value-text",
-		dialClass: "dial",
-		gaugeClass: "gauge",
-		showValue: true,
-		gaugeColor: null,
-		label: function(val) {
-			return Math.round(val);
-		} // returns a string label that will be rendered in the center
-	});
-</script>
