@@ -17,7 +17,7 @@ const app = express();
 // View Engine (Handlebars)
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
-app.set("view options", { layout: "layouts/main" });
+app.set("view options", { layout: "layout" });
 hbs.registerPartials(__dirname + "/views/partials", err => {});
 hbsUtils.registerWatchedPartials(__dirname + "/views/partials");
 

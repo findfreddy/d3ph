@@ -1,6 +1,189 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<h5>List of Tweets</h5>
-{{#each searchResults as |result|}}
-	{{result}}
-{{/each}}
+<!-- Navbar begins. -->
+
+<nav class="navbar navbar-expand-lg bg-light">
+	<div class="container-fluid">
+		<div class="d-flex">
+			<a class="navbar-brand" href="#"><b>💢d3ph.com</b></a>
+
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#">Taiwan</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled">N.Korea</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled">Iran</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled">Ukraine</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">*upgrade to PRO</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="d-flex flex-row justify-content-end">
+			<button type="buttonLogin" class="btn btn-primary me-1">
+				&nbspLogin&nbsp
+			</button>
+			<button type="buttonSignUp" class="btn btn-secondary">SignUp</button>
+		</div>
+	</div>
+</nav>
+
+<!-- Navbar ends -->
+
+<!-- Main Body begins -->
+
+<div class="container text-center ">
+	<div class="row mb-5 mt-5">
+		<h1>Taiwan d3phcom level</h1>
+		<h3>💢war probabilty indicator💢</h3>
+		<p>
+			Every 10 seconds: facts, emotions and sentiments from different
+			sources and perspectives are compiled + weighed and sumarized.
+		</p>
+	</div>
+
+	<!-- Guage begins -->
+	<div class="row align-items-start">
+		<div class="col bg-dark text-light m-3">
+			<div id="gauge-demo" class="gauge-container"></div>
+		</div>
+		<!-- Guage ends. -->
+
+		<!-- Historic Values begins. -->
+		<div class="col text-light m-3">
+			<div class="card bg-dark text-start">
+				<div class="card-body">
+					<h2 class="card-title-center">
+						Historical Values
+					</h2>
+					<div class="row bg-dark text-light">
+						<div class="col mb-3 mt-3">
+							<span><h6>Now</h6></span>
+							<span><h5>Extreme Fear</h5></span>
+						</div>
+						<div class="col mt-4 mb-3 text-end">
+							<span>25</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col mb-3">
+							<span><h6>Last 24 Hours Avg</h6></span>
+							<span><h5>Extreme Fear</h5></span>
+						</div>
+						<div class="col mt-3 text-end">
+							<span>25</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col mb-3">
+							<span><h6>Last Week Avg</h6></span>
+							<span><h5>Extreme Fear</h5></span>
+						</div>
+						<div class="col mt-3 text-end">
+							<span>25</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col mb-3">
+							<span><h6>Last Month Avg</h6></span>
+							<span><h5>Extreme Fear</h5></span>
+						</div>
+						<div class="col mt-3 text-end">
+							<span>25</span>
+							<br />
+							<br />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Historic Values ends. -->
+
+		<!-- Next Update clock (clock timer conected to setinterval.JS) begins -->
+		<div class="col bg-dark text-light m-3">
+			<h2 class="card-title text-start">Next Update</h2>
+
+			<p>
+				Click the button to prevent the timeout to execute. (You have 3
+				seconds).
+			</p>
+
+			<h2 id="demo"></h2>
+
+			<button onclick="myStopFunction()">Stop it</button>
+
+			<script>
+				const myTimeout = setTimeout(myGreeting, 3000);
+
+				function myGreeting() {
+					document.getElementById("demo").innerHTML = "Happy Birthday!";
+				}
+
+				function myStopFunction() {
+					clearTimeout(myTimeout);
+				}
+			</script>
+
+			<br />
+			<br />
+			<br /><br />The next update will happen in: <br />
+			<br />
+			8 seconds. <br /><br />
+			<br />
+			<br /><br />
+			<br />
+
+			<br /><br />
+		</div>
+	</div>
+	<!-- Next Update ends. -->
+
+	<!-- Twitter Feed Embed begins. -->
+	<div class="">
+		<a
+			class="twitter-timeline"
+			data-lang="en"
+			data-width="900"
+			data-height="2200"
+			data-theme="dark"
+			href="https://twitter.com/politweet1789/lists/1499848319354478595?ref_src=twsrc%5Etfw"
+			>A Twitter List by politweet1789</a
+		>
+		<script
+			async
+			src="https://platform.twitter.com/widgets.js"
+			charset="utf-8"
+		></script>
+	</div>
+</div>
+<!-- Twitter Feed Embed ends. -->
+
+<!-- SCRIPTS FOOTER OF BODY. -->
+<script>
+	var myGauge = Gauge(document.getElementById("gauge-demo"), {
+		dialRadius: 40,
+		dialStartAngle: 135,
+		dialEndAngle: 45,
+		value: 45,
+		max: 100,
+		min: 0,
+		valueDialClass: "value",
+		valueClass: "value-text",
+		dialClass: "dial",
+		gaugeClass: "gauge",
+		showValue: true,
+		gaugeColor: null,
+		label: function(val) {
+			return Math.round(val);
+		} // returns a string label that will be rendered in the center
+	});
+</script>

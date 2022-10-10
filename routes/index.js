@@ -4,63 +4,70 @@ const axios = require("axios");
 
 /* GET home page. */
 
-router.get("/", async function(req, res, next) {
-  // Search for Tweets within the past seven days
-  // https://developer.twitter.com/en/docs/twitter-api/tweets/search/quick-start/recent-search
 
-  const needle = require("needle");
+  // TWITTER GET DATA *****
 
-  // The code below sets the bearer token from your environment variables
-  // To set environment variables on macOS or Linux, run the export command below from the terminal:
-  // export BEARER_TOKEN='YOUR-TOKEN'
-  const token = process.env.BEARER_TOKEN;
+  let searchResults = await axios.get(
+    "https://api.twitter.com/2/tweets/search/recent?query=war' headers: {'Authorization': Bearer AAAAAAAAAAAAAAAAAAAAAOwshgEAAAAAHriLJShnkBSUOnAlW1BbbRH5DOA%3DvWhH5ttyxXl7g33krHz6m6IPjeL57HLh8SQ76QBPR8yvin2SeP});
 
-  const endpointUrl = "https://api.twitter.com/2/tweets/search/recent";
+  console.log(searchResults);
 
-  async function getRequest() {
-    // Edit query parameters below
-    // specify a search query, and any additional fields that are required
-    // by default, only the Tweet ID and text fields are returned
-    const params = {
-      query: "from:twitterdev -is:retweet",
-      "tweet.fields": "author_id"
-    };
+    //TWITTER SCRIPT FROM LIBRARY **** https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/main/Recent-Search/recent_search.js
 
-    const res = await needle("get", endpointUrl, params, {
-      headers: {
-        "User-Agent": "v2RecentSearchJS",
-        authorization: `Bearer ${token}`
-      }
-    });
+  // router.get("/", async function(req, res, next) {
+  //   // Search for Tweets within the past seven days
+  //   // https://developer.twitter.com/en/docs/twitter-api/tweets/search/quick-start/recent-search
+  //
+  //   const needle = require("needle");
+  //
+  //   // The code below sets the bearer token from your environment variables
+  //   // To set environment variables on macOS or Linux, run the export command below from the terminal:
+  //   // export BEARER_TOKEN='YOUR-TOKEN'
+  //   const token = process.env.BEARER_TOKEN;
+  //
+  //   const endpointUrl = "https://api.twitter.com/2/tweets/search/recent";
+  //
+  //   async function getRequest() {
+  //     // Edit query parameters below
+  //     // specify a search query, and any additional fields that are required
+  //     // by default, only the Tweet ID and text fields are returned
+  //     const params = {
+  //       query: "from:twitterdev -is:retweet",
+  //       "tweet.fields": "author_id"
+  //     };
+  //
+  //     const res = await needle("get", endpointUrl, params, {
+  //       headers: {
+  //         "User-Agent": "v2RecentSearchJS",
+  //         authorization: `Bearer ${token}`
+  //       }
+  //     });
+  //
+  //     if (res.body) {
+  //       return res.body;
+  //     } else {
+  //       throw new Error("Unsuccessful request");
+  //     }
+  //   }
+  //
+  //   (async () => {
+  //     try {
+  //       // Make request
+  //       const response = await getRequest();
+  //       console.dir(response, {
+  //         depth: null
+  //       });
+  //     } catch (e) {
+  //       console.log(e);
+  //       process.exit(-1);
+  //     }
+  //     process.exit();
+  //   })();
 
-    if (res.body) {
-      return res.body;
-    } else {
-      throw new Error("Unsuccessful request");
-    }
-  }
 
-  (async () => {
-    try {
-      // Make request
-      const response = await getRequest();
-      console.dir(response, {
-        depth: null
-      });
-    } catch (e) {
-      console.log(e);
-      process.exit(-1);
-    }
-    process.exit();
-  })();
-  // Twitter
+  // SENTIMENT ANALYSIS *****
 
-  // let searchResults = await axios.get(
-  //   "https://api.twitter.com/2/tweets/search/recent?query=war' headers: {'Authorization': Bearer AAAAAAAAAAAAAAAAAAAAAOwshgEAAAAAHriLJShnkBSUOnAlW1BbbRH5DOA%3DvWhH5ttyxXl7g33krHz6m6IPjeL57HLh8SQ76QBPR8yvin2SeP});
 
-  // console.log(searchResults);
-
-  // Watson
 
   // Render
   res.render("index", { title: "Express", searchResults });
