@@ -43,19 +43,18 @@ mongoose.connect(
 // Routes
 // Create route for search page
 
-app.get("/", (req, res) => {
-  res.render("index");
-  console.log("***its working***");
-});
+// app.get("/", (req, res) => {
+//   res.render("index");
+//   console.log("***its working***");
+// });
 
 // Use this next
 // app.use('/', require('./controllers/search'))
 
-// Create route for results page
-app.get("/results", (req, res) => {
-  res.render("results");
-  console.log("HELLO THERE WOODPECKER");
-});
+//TWITTER APP GET REQUEST
+
+// Search for Tweets within the past seven days
+// https://developer.twitter.com/en/docs/twitter-api/tweets/search/quick-start/recent-search
 
 // SENTIMENT GOOGLE
 // axios.post(
@@ -73,6 +72,7 @@ app.get("/results", (req, res) => {
 // });
 
 // Error Handler
+
 app.use((err, req, res, next) => {
   next(createError(404));
 
@@ -84,6 +84,14 @@ app.use((err, req, res, next) => {
   // Render the error page
   res.status(err.status || 500);
   res.render("error");
+});
+
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.listen(process.env.PORT, () => {
+  console.log("App running on PORT " + process.env.PORT);
 });
 
 module.exports = app;
